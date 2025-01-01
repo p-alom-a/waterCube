@@ -14,15 +14,21 @@
         arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false" 
         renderer="antialias: true; alpha: true">
         
-        <!-- Camera configurée pour GPS -->
-        <a-camera gps-projected-camera></a-camera>
+        <!-- Caméra GPS -->
+        <a-camera 
+            gps-projected-camera 
+            minDistance="0.1" 
+            maxDistance="100">
+        </a-camera>
 
-        <!-- Exemple d'objet 3D avec coordonnées GPS -->
-        <a-entity 
-            gps-projected-entity-place="latitude: 48.8566; longitude: 2.3522;" 
-            geometry="primitive: box; height: 1; width: 1; depth: 1;" 
-            material="color: red;">
-        </a-entity>
+        <!-- Cube de 20m placé à des coordonnées GPS -->
+        <a-box 
+            gps-projected-entity-place="latitude: 48.8566; longitude: 2.3522" 
+            material="color: red; opacity: 0.7" 
+            width="20" 
+            height="20" 
+            depth="20">
+        </a-box>
     </a-scene>
 </body>
 </html>
